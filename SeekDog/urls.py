@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from apps.poc import views as poc_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('poc/', poc_view.poc)
 ]
