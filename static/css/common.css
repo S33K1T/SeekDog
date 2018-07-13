@@ -1,0 +1,71 @@
+/*导航栏*/
+ .header .navbar{
+            background-color: #293c55;
+            font-weight: bold;
+            min-height: 55px;
+            wieght:100%;
+        }
+ .header .navbar-default .navbar-nav > li > a{
+            color: #ffffff;
+            font-weight: bold;
+            padding:1.2em 40px 1.2em 40px;
+            font-size: 18px;
+            font-family: "幼圆";
+        }
+  .header .nav{
+      float: right;
+  }
+    .header .navbar .dropdown-menu>li>a{
+                color: #293c55;
+            font-weight: bold;
+            padding-right:45px;
+            padding:0.8em 30px 0.8em 20px;
+            font-size: 18px;
+            font-family: "幼圆";
+        }
+
+      .header .logo{
+            height: 55px;
+            width: 10%;
+            background-color: #fff;
+            float: left;
+            margin-top: 5px;
+            margin-left:3%;
+        }
+         .header .navbar-header button{
+            margin-top: 25px;
+        }
+         /*图标、标题*/
+         .main .title p{
+    font-size: 18px;
+    margin-top: -50px;
+position: relative;
+    left: 15%;
+}
+        .main .icon1{
+    width: 80px;
+    height: 80px;
+    background-image: url("../img/网络扫描.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    left: -39%;
+   margin-top: 90px;
+}
+        hr{
+  width:90%;
+
+}
+
+        @media (max-width:800px) {
+            .main .title p {
+                font-size: 15px;
+                margin-top: -40px;
+            }
+
+            .main .icon1 {
+                width: 60px;
+                height: 60px;
+                left: -43%;
+            }
+        }

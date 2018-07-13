@@ -1,3 +1,4 @@
+/*全局*/
 *{
     margin: 0 auto;
 }
@@ -11,27 +12,7 @@ body{
 .fuzzy{
     height: auto;
 }
-.icon1{
-    width: 80px;
-    height: 80px;
-    background-image: url("../img/网络扫描.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: relative;
-    left: -39%;
-   margin-top: 90px;
-}
-.fuzzy-title p{
-    font-size: 18px;
-    margin-top: -50px;
-position: relative;
-    left: 15%;
-}
-hr{
-  width:90%;
-
-}
-
+/*表单样式*/
 .form-horizontal{
     margin-top:50px;
     margin-left: 5%;
@@ -50,6 +31,7 @@ hr{
     margin-right: 10px;
     font-size:1.5em;
 }
+/*检测结果*/
 .fuzzy-result .result{
     width: 50%;
     height: 500px;
