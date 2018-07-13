@@ -1,14 +1,4 @@
-/*全局*/
-*{
-    margin: 0 auto;
-}
-body{
-    height: 100%;
-}
-.main{
-    width: 80%;
-    height: 400px;
-}
+
 .fuzzy{
     height: auto;
 }
