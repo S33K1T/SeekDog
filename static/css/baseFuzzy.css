@@ -1,0 +1,93 @@
+*{
+    margin: 0 auto;
+}
+body{
+    height: 100%;
+}
+.main{
+    width: 80%;
+    height: 400px;
+}
+.fuzzy{
+    height: auto;
+}
+.icon1{
+    width: 80px;
+    height: 80px;
+    background-image: url("../img/网络扫描.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    left: -39%;
+   margin-top: 90px;
+}
+.fuzzy-title p{
+    font-size: 20px;
+    margin-top: -50px;
+position: relative;
+    left: 15%;
+}
+hr{
+  width:90%;
+
+}
+
+.form-horizontal{
+    margin-top:50px;
+    margin-left: 5%;
+}
+.fuzzy .form-group{
+    margin-bottom: 50px;
+}
+.fuzzy .btn{
+    background-color: #ccc;
+    height: 50px;
+    width: 30%;
+    font-size: 18px;
+    margin-top: -20px;
+}
+.fuzzy .iconfont{
+    margin-right: 10px;
+    font-size:1.5em;
+}
+.fuzzy-result .result{
+    width: 60%;
+    height: 500px;
+    border:1px solid #ccc;
+    margin-left:150px;
+    float: left;
+
+}
+.fuzzy-result #graph{
+    margin-top: 60px;
+    width: 400px;
+    height: 400px;
+    float:right;
+}
+
+@media (max-width: 2000px) {
+      .fuzzy-result .result{
+        clear: both;
+        width: 100%;
+        margin-left: 0px;
+    }
+    .fuzzy-result #graph{
+        clear: both;
+        margin: 0 auto;
+    }
+}
+@media (max-width:800px){
+    .fuzzy-title p{
+        font-size: 15px;
+           margin-top: -40px;
+    }
+    .icon1{
+        width: 60px;
+        height: 60px;
+           left: -43%;
+    }
+    .fuzzy .btn {
+        height: 40px;
+    }
+
+    }
