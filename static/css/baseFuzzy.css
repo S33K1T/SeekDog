@@ -22,7 +22,7 @@ body{
    margin-top: 90px;
 }
 .fuzzy-title p{
-    font-size: 20px;
+    font-size: 18px;
     margin-top: -50px;
 position: relative;
     left: 15%;
@@ -41,9 +41,9 @@ hr{
 }
 .fuzzy .btn{
     background-color: #ccc;
-    height: 50px;
-    width: 30%;
-    font-size: 18px;
+    height: 40px;
+    width: 28%;
+    font-size: 16px;
     margin-top: -20px;
 }
 .fuzzy .iconfont{
@@ -51,10 +51,10 @@ hr{
     font-size:1.5em;
 }
 .fuzzy-result .result{
-    width: 60%;
+    width: 50%;
     height: 500px;
     border:1px solid #ccc;
-    margin-left:150px;
+    margin-left:120px;
     float: left;
 
 }
@@ -65,16 +65,19 @@ hr{
     float:right;
 }
 
-@media (max-width: 2000px) {
-      .fuzzy-result .result{
-        clear: both;
-        width: 100%;
-        margin-left: 0px;
-    }
+@media (max-width: 1400px){
+    .fuzzy-result .result{
+    width: 70%;
+        margin-left: 15%;
+    height: 500px;
+}
     .fuzzy-result #graph{
         clear: both;
-        margin: 0 auto;
-    }
+        position: relative;
+        left: -25%;
+}
+
+    .
 }
 @media (max-width:800px){
     .fuzzy-title p{
