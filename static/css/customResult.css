@@ -1,0 +1,46 @@
+.title .icon1{
+    width: 60px;
+    height: 60px;
+    background-image: url("../img/查询结果.png");
+}
+hr{
+    margin-top: 30px;
+}
+#graph{
+    width: 350px;
+    height: 300px;
+    margin-top: 30px;
+
+}
+#dataTable{
+    margin-left: 5%;
+    margin-top: 30px;
+}
+#dataBox{
+    height: 350px;
+    margin-left: 5%;
+}
+#dataBox p{
+    margin-top: 20px;
+    margin-left: 5%;
+    width: 80%;
+}
+#result{
+       margin-left: 5%;
+    margin-top: 30px;
+}
+@media (max-width: 1200px){
+    #graph{
+        display: none;
+    }
+    #dataTable{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    #dataBox{
+            width: 80%;
+    }
+    #result{
+        width: 80%;
+    }
+}
