@@ -1,0 +1,44 @@
+.poc-title {
+    font-size: 18px;
+}
+
+hr {
+    margin-top: 0px;
+    width: 100%;
+}
+
+.poc-search {
+    width: 350px;
+}
+
+.poc-info {
+    display: inline-block;
+    font-size: 14px;
+    color:#666;
+}
+
+.poc-progress-bar {
+    width: 350px;
+    height: 20px;
+    display: flex;
+}
+
+.poc-progress-bar > * {
+    margin: 0px;
+}
+
+.bar-cnt > div {
+    margin: 0px;
+    height: 20px;
+}
+
+.out-bar {
+    position: absolute;
+    width: 250px;
+    border: 1px solid;
+}
+
+.in-bar {
+    width: 150px;
+    background-color: deepskyblue;
+}

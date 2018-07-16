@@ -5,6 +5,7 @@
     <title>POC检测</title>
     <link rel="stylesheet" href="../../../static/css/common.css">
     <link rel="stylesheet" href="../../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../static/css/poc.css">
 </head>
 <body>
 <!--导航-->
@@ -43,7 +44,81 @@
         </div>
     </nav>
 </div>
-
+<div class="main">
+    <img src="../../../static/img/web_scan.png" style="width: 80px;">
+    <span class="poc-title">POC 检测</span>
+    <hr>
+    <div class="poc-search">
+        <label>POC关键字：</label>
+        <input class="poc-search-text" type="text">
+        <input class="poc-search-btn" type="button" value="查询">
+    </div>
+    <div class="poc-list">
+        POC列表
+        <table class="am-table am-table-striped am-table-hover table-main">
+            <thead>
+            <tr>
+                <th>Tick</th>
+                <th class="poc-name">Name</th>
+                <th class="poc_scope">Scope</th>
+                <th class="poc_description">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="radio" name="check"></td>
+                <td class="list_0_0 am-hide-sm-only">{{ poc_list.0.0 }}</td>
+                <td class="list_0_1 am-hide-sm-only">{{ poc_list.0.1 }}</td>
+                <td class="list_0_2 am-hide-sm-only">{{ poc_list.0.2 }}</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="check"></td>
+                <td class="list_1_0 am-hide-sm-only">{{ poc_list.1.0 }}</td>
+                <td class="list_1_1 am-hide-sm-only">{{ poc_list.1.1 }}</td>
+                <td class="list_1_2 am-hide-sm-only">{{ poc_list.1.2 }}</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="check"></td>
+                <td class="list_2_0 am-hide-sm-only">{{ poc_list.2.0 }}</td>
+                <td class="list_2_1 am-hide-sm-only">{{ poc_list.2.1 }}</td>
+                <td class="list_2_2 am-hide-sm-only">{{ poc_list.2.2 }}</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="check"></td>
+                <td class="list_3_0 am-hide-sm-only">{{ poc_list.3.0 }}</td>
+                <td class="list_3_1 am-hide-sm-only">{{ poc_list.3.1 }}</td>
+                <td class="list_3_2 am-hide-sm-only">{{ poc_list.3.2 }}</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="check"></td>
+                <td class="list_4_0 am-hide-sm-only">{{ poc_list.4.0 }}</td>
+                <td class="list_4_1 am-hide-sm-only">{{ poc_list.4.1 }}</td>
+                <td class="list_4_2 am-hide-sm-only">{{ poc_list.4.2 }}</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="all-tick">全选</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="poc-info">
+        {{ POC_version }}<br>
+        {{ CMS_num }}<br>
+        <span class="poc-num">{{ POC_num }}</span>
+    </div>
+    <div class="poc-progress-bar">
+        <label>进度条：</label>
+        <div class="bar-cnt">
+            <div class="out-bar"></div>
+            <div class="in-bar"></div>
+        </div>
+    </div>
+    <div class="poc-result">
+        <img src="../../../static/img/scan_result.png" style="width: 60px;">
+        <span class="poc-title">检测结果</span>
+    <hr>
+    </div>
+</div>
 <script src="../../../static/js/jquery-1.9.1.js"></script>
 <script src="../../../static/js/bootstrap.min.js"></script>
 </body>
