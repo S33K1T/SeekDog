@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>自定义模糊测试</title>
+     <link rel="stylesheet" href="../../../static/css/common.css">
+     <link rel="stylesheet" href="../../../static/css/userDefined.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap.min.css">
 </head>
 <body>
+<!--导航-->
+<div class="header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="logo">
+            logo
+        </div>
+        <div class="container" style="margin-right: 0px;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar—collapse-1">
+                    <span class="sr-only">汉堡按钮</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar—collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">信息收集</a></li>
+                    <li class="active" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">模糊测试
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">基础模糊测试</a></li>
+                            <li><a href="#">自定义模糊测试</a></li>
+                            <li><a href="#">payload文件修改</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">POC检测</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
 
+<script src="../../../static/js/jquery-1.9.1.js"></script>
+<script src="../../../static/js/bootstrap.min.js"></script>
 </body>
 </html>

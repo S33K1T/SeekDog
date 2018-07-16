@@ -3,8 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <title>payload文件修改</title>
+      <link rel="stylesheet" href="../../../static/css/common.css">
+      <link rel="stylesheet" href="../../../static/css/payloadEdit.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap.min.css">
 </head>
 <body>
+<!--导航-->
+<div class="header">
 
+   <nav class="navbar navbar-default" role="navigation">
+       <div class="logo">
+                logo
+            </div>
+	<div class="container" style="margin-right: 0px;">
+
+	    <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar—collapse-1">
+			<span class="sr-only">汉堡按钮</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar—collapse-1">
+	        <ul class="nav navbar-nav">
+		    <li><a href="#">首页</a></li>
+		    <li><a href="#">信息收集</a></li>
+		    <li  class="active" class="dropdown">
+		      <a href="#" class="dropdown-toggle" data-toggle="dropdown">模糊测试
+		        <span class="caret"></span>
+		      </a>
+		      <ul class="dropdown-menu" role="menu">
+			  <li><a href="#">基础模糊测试</a></li>
+			  <li><a href="#">自定义模糊测试</a></li>
+			  <li><a href="#">payload文件修改</a></li>
+		      </ul>
+		     </li>
+                  <li><a href="#">POC检测</a></li>
+		</ul>
+
+	   </div>
+        </div>
+     </nav>
+</div>
+
+<!--主要内容-->
+<div class="main">
+    <div class="title">
+        <div class="icon1"></div>
+        <p>payload文件修改</p>
+    </div>
+<hr>
+    <div class="formList">
+     <form class="form-horizontal" role="form">
+             <div class="form-group">
+    <label for="fileName" class="col-sm-2 control-label">文件名</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="fileName" placeholder="">
+    </div>
+                 <div class="col-sm-3 ">
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">payload文件列表</button>
+      </div>
+
+
+
+  </div>
+  <div class="form-group">
+    <label for="fileType" class="col-sm-2 control-label">类型</label>
+   <div class="col-sm-6">
+      <input type="text" class="form-control" id="fileType" placeholder="">
+    </div>
+  </div>
+  <div class="form-group" style="margin-bottom: 40px">
+    <label for="fileContainer" class="col-sm-2 control-label">文件内容</label>
+   <div class="col-sm-6">
+       <textarea class="form-control" id="fileContainer" rows="12" placeholder="" style="margin-bottom: 20px;"></textarea>
+    </div>
+         <div class="form-group collapse" id="demo">
+                <label for="payloadFile" class="col-sm-2 control-label">payload文件</label>
+                <div class="col-sm-3">
+                <select multiple class="form-control" style="height: 225px;">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+                 </select>
+                </div>
+            </div>
+  </div>
+  <div class="form-group" style="margin-top: -20px">
+    <div class="col-sm-offset-4 col-sm-10">
+      <button type="submit" class="btn btn-default" onclick="getResult()">提交</button>
+      <button type="button" class="btn btn-default" onclick="remove()">还原</button>
+      <button type="button" class="btn btn-default" onclick="clearAll()">清空</button>
+    </div>
+  </div>
+
+
+
+</form>
+    </div>
+</div>
+<!-- jQuery (Bootstrap的JavaScript插件需要引入jQuery) -->
+<script src="../../../static/js/jquery-1.9.1.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="../../../static/js/bootstrap.min.js"></script>
 </body>
 </html>

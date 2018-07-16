@@ -1,0 +1,16 @@
+.main .form-group{
+    margin-bottom: 30px;
+}
+.main .btn{
+    background-color: #ccc;
+}
+#demo{
+    position: relative;
+    top: 2%;
+}
+@media (max-width: 765px) {
+#demo{
+    margin-left: 1%;
+    width: 100%;
+}
+}
