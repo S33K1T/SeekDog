@@ -55,15 +55,16 @@
     </div>
 <hr>
     <div class="formList">
+
      <form class="form-horizontal" role="form">
              <div class="form-group">
-    <label for="fileName" class="col-sm-2 control-label">文件名</label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" id="fileName" placeholder="">
-    </div>
+                 <label for="fileName" class="col-sm-2 control-label">文件名</label>
+                 <div class="col-sm-6">
+                  <input type="text" class="form-control" id="fileName" placeholder="">
+                 </div>
                  <div class="col-sm-3 ">
-            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">payload文件列表</button>
-      </div>
+                 <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">payload文件列表</button>
+             </div>
 
 
 
@@ -83,11 +84,13 @@
                 <label for="payloadFile" class="col-sm-2 control-label">payload文件</label>
                 <div class="col-sm-3">
                 <select multiple class="form-control" style="height: 225px;">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+
+                            {% for item in lists %}
+                                 <option>
+                                    <span>{{ item.NAME }}</span>|
+                                    <span>{{ item.PAYLOADTYPE }}</span>
+                                 </option>
+                            {% endfor %}
                  </select>
                 </div>
             </div>
@@ -103,6 +106,8 @@
 
 
 </form>
+
+
     </div>
 </div>
 <!-- jQuery (Bootstrap的JavaScript插件需要引入jQuery) -->

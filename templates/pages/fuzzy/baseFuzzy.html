@@ -79,11 +79,12 @@
                 <label for="payloadFile" class="col-sm-2 control-label" style="margin-bottom: 40px">payload文件</label>
                 <div class="col-sm-7">
                 <select multiple class="form-control">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+                            {% for item in lists %}
+                                 <option>
+                                    <span>{{ item.NAME }}</span>|
+                                    <span>{{ item.PAYLOADTYPE }}</span>
+                                 </option>
+                            {% endfor %}
                  </select>
                 </div>
             </div>
