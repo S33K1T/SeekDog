@@ -19,5 +19,6 @@ from apps.poc import views as poc_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('poc/', poc_view.poc)
+    path('poc/', poc_view.poc),
+    path('ajax-POC/', poc_view.ajax_POC)
 ]

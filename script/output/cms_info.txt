@@ -1,0 +1,6 @@
+Target Cms Name:MinyooCMS ,Rule:http://baidu.com/download.jsp md5:d41d8cd98f00b204e9800998ecf8427e
+
+cost: 105.079359 s
+cost: 21.468623 s
+cost: 156.032582 s
+cost: 311.535421 s

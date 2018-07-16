@@ -1,0 +1,2 @@
+[*]www.freebuff.com:80
+[*]www.freebuff.com:3306

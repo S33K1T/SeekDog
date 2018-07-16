@@ -17,6 +17,28 @@ hr {
     color:#666;
 }
 
+.poc-list {
+    width: 90%;
+}
+
+.poc-list-tbl > thead {
+    border-bottom: 1px solid #ddd;
+}
+
+.poc-list-tbl tr {
+    height: 35px;
+    font-size: 15px;
+}
+
+.poc-list-tbl td, .poc-list-tbl th{
+    color: #666;
+    padding: 0px 7px;
+}
+
+.poc-list-tbl > tbody tr:nth-child(odd) {
+    background: #f3f4f6;
+}
+
 .poc-progress-bar {
     width: 350px;
     height: 20px;
