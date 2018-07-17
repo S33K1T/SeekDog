@@ -66,28 +66,16 @@
       <th style="width: 60px;">是否命中</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>Tanmay</td>
-      <td>Bangalore</td>
-      <td>560001</td>
-      <td>560001</td>
-      <td>560001</td>
-    </tr>
-    <tr>
-      <td>Sachin</td>
-      <td>Mumbai</td>
-      <td>400003</td>
-      <td>400003</td>
-      <td>400003</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+  <tbody id="resultTable">
+  {% for item in Resultlists %}
+        <tr>
+            <td></td>
+            <td>{{ item.url }}</td>
+            <td>{{ item.path }}</td>
+            <td>{{ item.statusco }}</td>
+            <td>{{ item.status }}</td>
+        </tr>
+  {% endfor %}
   </tbody>
 </table>
             </div>
@@ -101,7 +89,7 @@
         检测结果
     </div>
     <div class="panel-body" style="height: 350px;">
-        内容
+        {{ conclusion }}
     </div>
             </div>
             <!--包数据-->
@@ -114,10 +102,14 @@
 </ul>
 <div id="myTabContent" class="tab-content">
 	<div class="tab-pane fade in active" id="data1">
-		<p>111111</p>
+		{% for item in  Resultlists %}
+		    <p class="{{ item.id }}" style="display: none;">{{ item.request }}</p>
+		{% endfor %}
 	</div>
 	<div class="tab-pane fade" id="data2">
-		<p>222222</p>
+		{% for item in  Resultlists %}
+		    <p class="{{ item.id }}" style="display: none;">{{ item.response }}</p>
+		{% endfor %}
 	</div>
 </div>
             </div>
@@ -175,8 +167,8 @@
             radius : '55%',
             center: ['50%', '60%'],
             data:[
-                {value:335, name:'命中'},
-                {value:310, name:'未命中'}
+                {value:1, name:'命中'},
+                {value:9, name:'未命中'}
             ]
         }
     ]
