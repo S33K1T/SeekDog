@@ -20,5 +20,9 @@ from apps.poc import views as poc_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('poc/', poc_view.poc),
+<<<<<<< HEAD
+    path('ajax-POC/', poc_view.ajax_POC)
+=======
     path('fuzz/',include('apps.fuzz.urls'))
+>>>>>>> e828efea7c69c248d5678ad08bafe2793542acfb
 ]

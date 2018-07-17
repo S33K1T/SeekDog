@@ -49,13 +49,13 @@
     <span class="poc-title">POC 检测</span>
     <hr>
     <div class="poc-search">
-        <label>POC关键字：</label>
+        <label style="font-weight: normal; font-size: 16px;">POC关键字：</label>
         <input class="poc-search-text" type="text">
         <input class="poc-search-btn" type="button" value="查询">
     </div>
     <div class="poc-list">
-        POC列表
-        <table class="am-table am-table-striped am-table-hover table-main">
+        <p style="font-size: 16px;">POC列表</p>
+        <table class="poc-list-tbl">
             <thead>
             <tr>
                 <th>Tick</th>
@@ -67,45 +67,49 @@
             <tbody>
             <tr>
                 <td><input type="radio" name="check"></td>
-                <td class="list_0_0 am-hide-sm-only">{{ poc_list.0.0 }}</td>
-                <td class="list_0_1 am-hide-sm-only">{{ poc_list.0.1 }}</td>
-                <td class="list_0_2 am-hide-sm-only">{{ poc_list.0.2 }}</td>
+                <td class="list_0_0">{{ poc_list.0.0 }}</td>
+                <td class="list_0_1">{{ poc_list.0.1 }}</td>
+                <td class="list_0_2">{{ poc_list.0.2 }}</td>
             </tr>
             <tr>
                 <td><input type="radio" name="check"></td>
-                <td class="list_1_0 am-hide-sm-only">{{ poc_list.1.0 }}</td>
-                <td class="list_1_1 am-hide-sm-only">{{ poc_list.1.1 }}</td>
-                <td class="list_1_2 am-hide-sm-only">{{ poc_list.1.2 }}</td>
+                <td class="list_1_0">{{ poc_list.1.0 }}</td>
+                <td class="list_1_1">{{ poc_list.1.1 }}</td>
+                <td class="list_1_2">{{ poc_list.1.2 }}</td>
             </tr>
             <tr>
                 <td><input type="radio" name="check"></td>
-                <td class="list_2_0 am-hide-sm-only">{{ poc_list.2.0 }}</td>
-                <td class="list_2_1 am-hide-sm-only">{{ poc_list.2.1 }}</td>
-                <td class="list_2_2 am-hide-sm-only">{{ poc_list.2.2 }}</td>
+                <td class="list_2_0">{{ poc_list.2.0 }}</td>
+                <td class="list_2_1">{{ poc_list.2.1 }}</td>
+                <td class="list_2_2">{{ poc_list.2.2 }}</td>
             </tr>
             <tr>
                 <td><input type="radio" name="check"></td>
-                <td class="list_3_0 am-hide-sm-only">{{ poc_list.3.0 }}</td>
-                <td class="list_3_1 am-hide-sm-only">{{ poc_list.3.1 }}</td>
-                <td class="list_3_2 am-hide-sm-only">{{ poc_list.3.2 }}</td>
+                <td class="list_3_0">{{ poc_list.3.0 }}</td>
+                <td class="list_3_1">{{ poc_list.3.1 }}</td>
+                <td class="list_3_2">{{ poc_list.3.2 }}</td>
             </tr>
             <tr>
                 <td><input type="radio" name="check"></td>
-                <td class="list_4_0 am-hide-sm-only">{{ poc_list.4.0 }}</td>
-                <td class="list_4_1 am-hide-sm-only">{{ poc_list.4.1 }}</td>
-                <td class="list_4_2 am-hide-sm-only">{{ poc_list.4.2 }}</td>
+                <td class="list_4_0">{{ poc_list.4.0 }}</td>
+                <td class="list_4_1">{{ poc_list.4.1 }}</td>
+                <td class="list_4_2">{{ poc_list.4.2 }}</td>
             </tr>
             <tr>
                 <td><input type="checkbox" class="all-tick">全选</td>
             </tr>
             </tbody>
         </table>
+        <div class="poc-info">
+            {{ POC_version }}<br>
+            {{ CMS_num }}<br>
+            <span class="poc-num">{{ POC_num }}</span>
+        </div>
+        <div class="paginator">
+
+        </div>
     </div>
-    <div class="poc-info">
-        {{ POC_version }}<br>
-        {{ CMS_num }}<br>
-        <span class="poc-num">{{ POC_num }}</span>
-    </div>
+
     <div class="poc-progress-bar">
         <label>进度条：</label>
         <div class="bar-cnt">
@@ -116,10 +120,11 @@
     <div class="poc-result">
         <img src="../../../static/img/scan_result.png" style="width: 60px;">
         <span class="poc-title">检测结果</span>
-    <hr>
+        <hr>
     </div>
 </div>
 <script src="../../../static/js/jquery-1.9.1.js"></script>
 <script src="../../../static/js/bootstrap.min.js"></script>
+<script src="../../../static/js/poc.js"></script>
 </body>
 </html>
