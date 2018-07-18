@@ -7,18 +7,22 @@ hr {
     width: 100%;
 }
 
-.poc-search {
+.poc-search, .poc-url {
     width: 350px;
 }
 
 .poc-info {
     display: inline-block;
     font-size: 14px;
-    color:#666;
+    color: #666;
 }
 
 .poc-list {
     width: 90%;
+}
+
+.poc-list-tbl {
+    width: 100%;
 }
 
 .poc-list-tbl > thead {
@@ -30,7 +34,13 @@ hr {
     font-size: 15px;
 }
 
-.poc-list-tbl td, .poc-list-tbl th{
+.poc-list-tbl td {
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.poc-list-tbl td, .poc-list-tbl th {
     color: #666;
     padding: 0px 7px;
 }
@@ -39,19 +49,61 @@ hr {
     background: #f3f4f6;
 }
 
+.paginator {
+    float: right;
+}
+
+.paginator > span {
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+.paginator > span:hover:not(.nth-page) {
+    background: deepskyblue;
+    cursor: hand;
+}
+
+.paginator .nth-page:hover {
+    border: 1px solid #666;
+}
+
+.paginator a:hover {
+    text-decoration: none;
+}
+
+.next-page {
+    font-size: 14px;
+}
+
+.bg-blue {
+    background: deepskyblue;
+}
+
 .poc-progress-bar {
-    width: 350px;
+    width: 365px;
     height: 20px;
     display: flex;
+    position: relative;
+    top: -30px;
 }
 
 .poc-progress-bar > * {
     margin: 0px;
 }
 
+.bar-cnt {
+    width: 250px;
+}
+
 .bar-cnt > div {
     margin: 0px;
     height: 20px;
+}
+
+.percent {
+    margin-left: 10px;
 }
 
 .out-bar {
@@ -61,6 +113,14 @@ hr {
 }
 
 .in-bar {
-    width: 150px;
+    width: 0px;
     background-color: deepskyblue;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }

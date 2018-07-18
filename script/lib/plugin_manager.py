@@ -14,6 +14,7 @@ class PluginManager(object):
     """
     插件管理器
     """
+
     def __init__(self):
         self.plugins = {}
         self.conn = sqlite3.connect(os.path.dirname(__file__) + "\\..\\database\\core.db")
@@ -45,12 +46,12 @@ class PluginManager(object):
         self.cu.execute("select count(*) from plugins")
         return self.cu.fetchone()[0]
 
-    def list_plugins(self,start=0, end=5):
+    def list_plugins(self, start=0, end=5):
         """
         显示插件列表
         :return: list, 插件列表
         """
-        self.cu.execute("select name, scope, description from plugins limit " +str(start)+","+str(end))
+        self.cu.execute("select name, scope, description from plugins limit " + str(start) + ", 5")
         return self.cu.fetchall()
 
     def search_plugin(self, keyword):
@@ -61,7 +62,7 @@ class PluginManager(object):
         """
         keyword = "%" + keyword + "%"
         self.cu.execute("select name, scope, description from plugins where "
-                        "name like ? or scope like ? or description like ?", (keyword, keyword,keyword))
+                        "name like ? or scope like ? or description like ?", (keyword, keyword, keyword))
         return self.cu.fetchall()
 
     def info_plugin(self, plugin):
@@ -81,7 +82,7 @@ class PluginManager(object):
         """
         if plugin not in self.plugins:
             self.plugins[plugin] = {}
-            plugin_name = plugin[plugin.index("_")+1:]
+            plugin_name = plugin[plugin.index("_") + 1:]
             plugin_dir = os.path.dirname(__file__) + "\\..\\plugins\\" + plugin[:plugin.index("_")]
             print(os.getcwd())
             module = load_module(plugin_name,
@@ -203,7 +204,7 @@ class PluginManager(object):
         :param dirs: 所有插件目录
         :return: list, 远程插件列表
         """
-        #远程url
+        # 远程url
         base_url = "https://xxx.com"
         plugin_dirs = []
         remote_plugins = []
@@ -213,7 +214,7 @@ class PluginManager(object):
             获取远程插件目录
             :return:
             """
-            r = requests.get(base_url+"plugins")
+            r = requests.get(base_url + "plugins")
             r.close()
             j = json.loads(r.text)
             for i in j:
@@ -225,7 +226,7 @@ class PluginManager(object):
             :param plugin_dir: list, 插件目录
             """
             remote_plugins = []
-            r = requests.get(base_url+plugin_dir)
+            r = requests.get(base_url + plugin_dir)
             r.close()
             j = json.loads(r.text)
             for i in j:
@@ -257,7 +258,7 @@ class PluginManager(object):
                 continue
             for fn in filenames:
                 if fn.endswith(".py"):
-                    local_plugins.append(dirpath+"/"+fn)
+                    local_plugins.append(dirpath + "/" + fn)
         return local_plugins
 
     def down_plugins(self, remote_plugins, local_plugins):
@@ -267,13 +268,14 @@ class PluginManager(object):
         :param local_plugins: list, 本地插件列表
         :return: list, 新增插件列表
         """
+
         def down_single_plugin(plugin):
             """
             下载单个插件
             :return:
             """
             base_url = "https://xxx.com/"
-            r = requests.get(base_url+plugin)
+            r = requests.get(base_url + plugin)
             r.close()
             j = json.loads(r.text)
             data = binascii.a2b_base64(j["content"])

@@ -16,7 +16,7 @@ def poc(request):
     ctx['POC_version'] = info[0]
     ctx['CMS_num'] = info[1]
     ctx['POC_num'] = info[2]
-    ctx['n'] = info[3]
+    ctx['page'] = range(1, info[3]+1)
     ctx['poc_list'] = poc_list
     return render(request, "pages/poc/poc.html", ctx)
 

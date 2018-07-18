@@ -41,14 +41,15 @@ class core_class(PluginManager):
         版本信息
         """
         info = ["POC库版本: %s" % self.version(), "CMS数目: %d" % self.cms_num(), "POC数目: %d" % self.plugins_num(),
-                self.plugins_enum()]
+                int(self.plugins_num()/5)]
         return info
 
     def do_list(self, start, end):
         """
         POC列表
         """
-        return self.list_plugins(start, end)
+        poc_list = self.list_plugins(start, end)
+        return poc_list
 
     def do_search(self, keyword):
         """

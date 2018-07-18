@@ -28,7 +28,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#">首页</a></li>
                     <li><a href="#">信息收集</a></li>
-                    <li class="active" class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">模糊测试
                             <span class="caret"></span>
                         </a>
@@ -38,7 +38,7 @@
                             <li><a href="#">payload文件修改</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">POC检测</a></li>
+                    <li class="active"><a href="#">POC检测</a></li>
                 </ul>
             </div>
         </div>
@@ -49,6 +49,7 @@
     <span class="poc-title">POC 检测</span>
     <hr>
     <div class="poc-search">
+        {% csrf_token %}
         <label style="font-weight: normal; font-size: 16px;">POC关键字：</label>
         <input class="poc-search-text" type="text">
         <input class="poc-search-btn" type="button" value="查询">
@@ -58,7 +59,7 @@
         <table class="poc-list-tbl">
             <thead>
             <tr>
-                <th>Tick</th>
+                <th style="width: 65px">Tick</th>
                 <th class="poc-name">Name</th>
                 <th class="poc_scope">Scope</th>
                 <th class="poc_description">Description</th>
@@ -66,37 +67,38 @@
             </thead>
             <tbody>
             <tr>
-                <td><input type="radio" name="check"></td>
+                <td class="tick0"><input type="checkbox" name="check">1</td>
                 <td class="list_0_0">{{ poc_list.0.0 }}</td>
                 <td class="list_0_1">{{ poc_list.0.1 }}</td>
                 <td class="list_0_2">{{ poc_list.0.2 }}</td>
             </tr>
             <tr>
-                <td><input type="radio" name="check"></td>
+                <td class="tick1"><input type="checkbox" name="check">2</td>
                 <td class="list_1_0">{{ poc_list.1.0 }}</td>
                 <td class="list_1_1">{{ poc_list.1.1 }}</td>
                 <td class="list_1_2">{{ poc_list.1.2 }}</td>
             </tr>
             <tr>
-                <td><input type="radio" name="check"></td>
+                <td class="tick2"><input type="checkbox" name="check">3</td>
                 <td class="list_2_0">{{ poc_list.2.0 }}</td>
                 <td class="list_2_1">{{ poc_list.2.1 }}</td>
                 <td class="list_2_2">{{ poc_list.2.2 }}</td>
             </tr>
             <tr>
-                <td><input type="radio" name="check"></td>
+                <td class="tick3"><input type="checkbox" name="check">4</td>
                 <td class="list_3_0">{{ poc_list.3.0 }}</td>
                 <td class="list_3_1">{{ poc_list.3.1 }}</td>
                 <td class="list_3_2">{{ poc_list.3.2 }}</td>
             </tr>
             <tr>
-                <td><input type="radio" name="check"></td>
+                <td class="tick4"><input type="checkbox" name="check">5</td>
                 <td class="list_4_0">{{ poc_list.4.0 }}</td>
                 <td class="list_4_1">{{ poc_list.4.1 }}</td>
                 <td class="list_4_2">{{ poc_list.4.2 }}</td>
             </tr>
             <tr>
                 <td><input type="checkbox" class="all-tick">全选</td>
+                <td class="detai"></td>
             </tr>
             </tbody>
         </table>
@@ -105,22 +107,53 @@
             {{ CMS_num }}<br>
             <span class="poc-num">{{ POC_num }}</span>
         </div>
-        <div class="paginator">
+        <div class="paginator show">
+            {% for i in page %}
+                <span><a href="javascript:void(0)" class="page{{ i }}">{{ i }}</a></span>
+            {% endfor %}
+            <span class="nth-page"><input type="text" style="width: 20px;height: 20px;" value="1"
+                                          onkeydown="if(event.keyCode==13){goToPage(this.value)}">/{{ page.stop|add:-1 }}页</span>
+            <span><a href="javascript:void(0)" class="next-page">下一页</a></span>
+            <input class="pageNum" type="text" style="display: none" value="{{ page.stop|add:-1 }}">
+        </div>
+        <div class="paginator paginator-search hidden">
 
         </div>
     </div>
 
-    <div class="poc-progress-bar">
-        <label>进度条：</label>
-        <div class="bar-cnt">
-            <div class="out-bar"></div>
-            <div class="in-bar"></div>
-        </div>
+
+    <div class="poc-url">
+        {% csrf_token %}
+        <label style="font-weight: normal; font-size: 16px;">待检测链接：</label>
+        <input class="poc-url-text" type="text">
+        <input class="poc-url-btn" type="button" value="检测">
     </div>
     <div class="poc-result">
         <img src="../../../static/img/scan_result.png" style="width: 60px;">
         <span class="poc-title">检测结果</span>
+        <div class="poc-progress-bar" style="display: none">
+            <label>进度条：</label>
+            <div class="bar-cnt">
+                <div class="out-bar"></div>
+                <div class="in-bar"></div>
+            </div>
+            <div class="percent">0%</div>
+        </div>
         <hr>
+        <div class="poc-result">
+            <table class="poc-list-tbl" style="display: none">
+                <thead>
+                <tr>
+                    <th class="poc-name">poc_name</th>
+                    <th class="poc_scope">poc_location</th>
+                    <th class="poc_description">is_found</th>
+                </tr>
+                </thead>
+                <tbody class="result-row">
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <script src="../../../static/js/jquery-1.9.1.js"></script>
