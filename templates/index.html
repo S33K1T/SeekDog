@@ -2,9 +2,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>seekDog</title>
+    <title>SEEKDOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/home_page.css">
 </head>
 <body>
+<!-- 导航模块 -->
+<header>
+    <nav class="navbar navbar-default">
+        <div class="logo">
+            <img src="../static/img/seekdog.png">
+        </div>
 
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <!-- 导航条菜单 -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="home_page" style="background: rgba(17,149,254,1);"><a href="#">首页</a></li>
+                <li class="collection"><a href="./info-collection/">信息收集</a></li>
+                <li class="list" onmouseover="change('list_cur','block')" onmouseout="change('list_cur','none')">
+                    <a href="#" class="special">模糊测试</a>
+                    <div id="list_cur">
+                        <a href="./fuzz/BaseFuzz/">基础模糊测试</a>
+                        <a href="./fuzz/CustomFuzz/">自定义模糊测试</a>
+                        <a href="./fuzz/payloadUpdate/">payload文件修改</a>
+                    </div>
+                </li>
+                <li class="poc"><a href="./poc/">POC检测</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="banner">
+    <div class="banner-info">
+        <h3>SEEKDOG网站漏洞扫描工具</h3>
+        <p>SEEKDOG可快速全面的对目标网站进行收集，对整个网站扫描也比较全面且准确率较高，结果也更加可靠，可以适用于采用网络安全系统的大中小型企业和政府职能部门，用户层面广泛，应用前景广阔。</p>
+    </div>
+    <div class="banner-box">
+        <div class="box">
+            <div class="box1">
+                <h4>实时可查看</h4>
+                <p>检测结果实时返回页面，可供用户实时查看</p>
+            </div>
+            <div class="box2">
+                <h4>用户可配置</h4>
+                <p>用户可对模糊测试的策略文件进行修改和添加</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box1">
+                <h4>准确率较高</h4>
+                <p>自主判断测试结果的能力使准确性大大提高</p>
+            </div>
+            <div class="box2">
+                <h4>检测覆盖全</h4>
+                <p>模糊测试和POC验证检测相结合，检测更加全面</p>
+            </div>
+        </div>
+    </div>
+    <img src="../static/img/bg.jpg">
+</div>
+<div class="mission1">
+    <h2>SEEKDOG的功能</h2>
+    <div class="function" id="function1">
+        <img src="../static/img/收集整编.png">
+        <h3>信息收集</h3>
+        <p>对网站的文件目录信息，域名信息和服务器信息进行查询收集，效率较高，用户等待的时间少</p>
+    </div>
+    <div class="function" id="function2">
+        <img src="../static/img/网络扫描.png">
+        <h3>模糊测试</h3>
+        <p>对SQL注入，跨站脚本，目录遍历三种典型的漏洞类型进行检测，且检测的准确率较高。</p>
+    </div>
+    <div class="function" id="function3">
+        <img src="../static/img/网络检测.png">
+        <h3>POC检测</h3>
+        <p>利用本地已知的POC脚本验证网站是否存在已知漏洞，具有很好的扩展性和兼容性</p>
+    </div>
+</div>
+<div class="mission2">
+    <h2>应用对象</h2>
+    <div class="location" id="location1">
+        <img src="../static/img/企业.png">
+        <h3>企业</h3>
+    </div>
+    <div class="location" id="location2">
+        <img src="../static/img/学校.png">
+        <h3>学校</h3>
+    </div>
+    <div class="location" id="location3">
+        <img src="../static/img/政府.png">
+        <h3>政府</h3>
+    </div>
+    <div class="description" id="description1">
+        近年来，全球将近九成企业遭受网络攻击，而这些攻击多数是因为网站存在漏洞引起的。SEEKDOG可尽早发现漏洞并将其修复，既可提升网站的安全状况，也极大地降低了后期维护的开销。
+    </div>
+    <div class="description" id="description2">
+        现有教育机构的官方网站系统易被击破，学生信息泄露易被他人恶意利用。SEEKDOG可以监控网站是否存在漏洞，并给出检测报告，实时保障教育机构网站的安全。
+    </div>
+    <div class="description" id="description3">
+        政府机关的文件是重中之重，一旦被恶意篡改，会带来严重的后果，也会影响政府的形象。SEEKDOG可实时检测网站是否存在漏洞，大大降低了文件被篡改的风险。
+    </div>
+</div>
+<div class="foot">
+    Copyright @ SEEKDOG
+</div>
+<!-- jQuery (Bootstrap的JavaScript插件需要引入jQuery) -->
+<script src="../static/bootstrap/js/jquery-1.9.1.js"></script>
+<script src="../static/js/script.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息收集</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" href="../../../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../static/css/home_page.css">
+    <link rel="stylesheet" href="../../../static/css/collection.css">
+    <script src="../../../static/js/jquery-1.9.1.js"></script>
+    <script src="../../../static/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            init();
+        });
+
+        function init() {
+            // slide up all divs
+            for (let i = 1 ;i <= 8; i++) {
+                $("#result" + i).slideUp();
+            }
+
+            //bind button's click events
+            for (let i = 1;i <= 8; i++) {
+                for (let j = 1; j <= 2;j++) {
+                    $(".bt"+j+"-"+i).click(function () {
+                        if (j == 1)
+                            $("#result"+i).slideDown();
+                        else
+                            $("#result"+i).slideUp();
+                    })
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- 导航模块 -->
+<header>
+    <nav class="navbar navbar-default">
+        <div class="logo">
+            <img src="../../../static/img/seekdog.png">
+        </div>
+        <div class="navbar-header">
+            <!-- 汉堡按钮 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                    aria-expanded="false">
+                <span class="sr-only">汉堡按钮</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <!-- 导航条菜单 -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="home_page"><a href="../">首页</a></li>
+                <li class="collection"><a href="#" style="background: rgba(17,149,254,1)">信息收集</a></li>
+                <li class="list" onmouseover="change('list_cur','block')" onmouseout="change('list_cur','none')">
+                    <a href="#" class="special">模糊测试</a>
+                    <div id="list_cur">
+                        <a href="../fuzz/BaseFuzz/">基础模糊测试</a>
+                        <a href="../fuzz/CustomFuzz/">自定义模糊测试</a>
+                        <a href="../fuzz/payloadUpdate/">payload文件修改</a>
+                    </div>
+                </li>
+                <li class="poc"><a href="../poc/">POC检测</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="head1">
+    <img src="../../../static/img/收集整编.png">
+    <span style="font-size: 24px;padding-left: 10px;">信息收集</span>
+    <hr/>
+</div>
+<div class="choose">
+    <div class="choose-top">
+        <input type="checkbox" name="checkname[]" value="1" id="checkbox1">whois类信息收集
+        <input type="checkbox" name="checkname[]" value="2" id="checkbox2">DNS类信息
+        <input type="checkbox" name="checkname[]" value="3" id="checkbox3">端口扫描
+        <input type="checkbox" name="checkname[]" value="4" id="checkbox4">web指纹
+    </div>
+    <div class="choose-down">
+        <input type="checkbox" name="checkname[]" value="5" id="checkbox6">robots文件枚举
+        <input type="checkbox" name="checkname[]" value="6" id="checkbox7">链接检测
+        <input type="checkbox" name="checkname[]" value="7" id="checkbox8">路由跳点
+        <input type="checkbox" name="checkname[]" value="8" id="checkbox9">反向ip查找
+    </div>
+    <span class="all-tick">
+        <input type="checkbox" name="all" value="全选" id="all" onclick="checkAll()">全选
+    </span>
+</div>
+<div class="URL">
+    <h3>URL</h3>
+    <input type="text" name="URL" id="url">
+    {% csrf_token %}
+    <button type="button" class="query-btn">查询</button>
+</div>
+<div class="head2">
+    <img src="../../../static/img/查询结果.png">
+    <h3>查询结果</h3>
+
+    <hr/>
+</div>
+<div class="button">
+    whois类信息
+    <button type="button" class="bt1-1"></button>
+    <button type="button" class="bt2-1"></button>
+</div>
+<div class="result" id="result1">
+</div>
+<div class="button">
+    DNS类信息
+    <button type="button" class="bt1-2"></button>
+    <button type="button" class="bt2-2"></button>
+</div>
+<div class="result" id="result2">
+</div>
+<div class="button">
+    端口扫描
+    <button type="button" class="bt1-3"></button>
+    <button type="button" class="bt2-3"></button>
+</div>
+<div class="result" id="result3">
+</div>
+<div class="button">
+    web指纹
+    <button type="button" class="bt1-4"></button>
+    <button type="button" class="bt2-4"></button>
+</div>
+<div class="result" id="result4">
+</div>
+<div class="button">
+    robots文件枚举
+    <button type="button" class="bt1-5"></button>
+    <button type="button" class="bt2-5"></button>
+</div>
+<div class="result" id="result5">
+</div>
+<div class="button">
+    链接检测
+    <button type="button" class="bt1-6"></button>
+    <button type="button" class="bt2-6"></button>
+</div>
+<div class="result" id="result6">
+</div>
+<div class="button">
+    路由跳点
+    <button type="button" class="bt1-7"></button>
+    <button type="button" class="bt2-7"></button>
+</div>
+<div class="result" id="result7">
+</div>
+<div class="button">
+    反向ip查找
+    <button type="button" class="bt1-8"></button>
+    <button type="button" class="bt2-8"></button>
+</div>
+<div class="result" id="result8">
+</div>
+<div class="foot">
+    Copyright @ SEEKDOG
+</div>
+<!-- jQuery (Bootstrap的JavaScript插件需要引入jQuery) -->
+<script src="../../../static/bootstrap/js/jquery-1.9.1.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="../../../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

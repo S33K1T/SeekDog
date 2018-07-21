@@ -1,0 +1,469 @@
+body {
+    font-family: "微软雅黑", sans-serif;
+}
+
+a:link, a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.head1 {
+    width: 70%;
+    height: 100px;
+    margin: 10px auto;
+}
+
+.head1 img {
+    width: 60px;
+    height: 60px;
+}
+
+.head1 h3 {
+    display: block;
+    position: absolute;
+    margin-top: 4%;
+    left: 27%;
+}
+
+.head1 hr {
+    width: 70%;
+    height: 1px;
+    background-color: #c0c0c0;
+    border: none;
+    position: absolute;
+    margin-top: 8px;
+}
+
+.choose {
+    width: 45%;;
+    height: 100px;
+    margin: 20px auto;
+}
+
+.choose input {
+    margin-left: 8%;
+    margin-top: 4%;
+}
+
+#checkbox1 {
+    margin-left: 0;
+}
+
+#checkbox6 {
+    margin-left: 0;
+}
+
+#checkbox7 {
+    margin-left: 9.5%;
+}
+
+#checkbox8 {
+    margin-left: 10.5%;
+}
+
+.all-tick {
+    position: relative;
+    top: -30px;
+    float: right;
+    width: 60px;
+}
+
+.URL {
+    position: relative;
+    width: 35%;;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.URL h3 {
+    margin-left: -5%;
+}
+
+.URL input {
+    position: absolute;
+    top: -8%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+}
+
+.URL button {
+    position: absolute;
+    margin-left: 97%;
+    margin-top: -6%;
+    width: 80px;
+    height: 40px;
+}
+
+.head2 {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.head2 img {
+    width: 5%;
+    height: 60%;
+    position: absolute;
+    left: 16%;
+}
+
+.head2 h3 {
+    display: block;
+    position: absolute;
+    top: 20%;
+    left: 27%;
+}
+
+.head2 hr {
+    width: 70%;
+    height: 1px;
+    background-color: #c0c0c0;
+    border: none;
+    position: absolute;
+    top: 66%;
+    left: 15%;
+}
+
+.result {
+    width: 60%;
+    min-height: 200px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 1px solid black;
+}
+
+.button {
+    position: relative;
+    width: 60%;
+    height: 40px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.bt1-1 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-1 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt1-2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt1-3 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-3 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt1-4 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-4 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt1-5 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-5 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt1-6 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-6 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt1-7 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-7 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt1-8 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    background: url("../img/加号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.bt2-8 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 1%;
+    background: url("../img/减号.png") no-repeat;
+    background-size: 28px 28px;
+    border: none;
+}
+
+.foot {
+    background-color: #293c55;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 1875px) {
+    .choose input {
+        margin-top: 2%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .head1 img {
+
+    }
+
+    .URL h3 {
+        margin-left: -15%;
+    }
+
+    .URL button {
+        margin-top: -9%;
+    }
+
+    .head2 img {
+        width: 4%;
+        height: 30%;
+    }
+
+    .head2 h3 {
+        display: block;
+        position: absolute;
+        top: -7%;
+        left: 21%;
+    }
+
+    .button {
+        margin-bottom: 50px;
+    }
+
+    .bt1 {
+        margin-top: 2%;
+        margin-left: 71%;
+    }
+
+    .bt2 {
+        margin-top: 2%;
+        margin-left: 75%;
+    }
+
+    .head2 hr {
+        top: 26%;
+    }
+
+    .result {
+        margin: -60px auto 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .head1 {
+        height: 100px;
+    }
+
+    .head1 img {
+        width: 5%;
+        height: 5%;
+    }
+
+    .head1 h3 {
+        font-size: 20px;
+    }
+
+    .head1 hr {
+        margin-top: 10%;
+    }
+
+    .choose input {
+        margin-left: 8%;
+        margin-top: 4%;
+    }
+
+    #checkbox1 {
+        margin-left: 0;
+    }
+
+    #checkbox3 {
+        margin-left: 0;
+    }
+
+    #checkbox6 {
+        margin-left: 0;
+    }
+
+    #checkbox7 {
+        margin-left: 12%;
+    }
+
+    #checkbox8 {
+        margin-left: 3%;
+    }
+
+    #checkbox9 {
+        margin-left: 28%;
+    }
+
+    .URL h3 {
+        margin-left: -15%;
+        font-size: 20px;
+    }
+
+    .URL input {
+        height: 40%;
+    }
+
+    .URL button {
+        margin-top: -13%;
+        width: 60px;
+        height: 30px;
+    }
+
+    .head2 {
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .head2 img {
+        width: 5%;
+        height: 25%;
+    }
+
+    .head2 h3 {
+        display: block;
+        position: absolute;
+        top: -7%;
+        left: 27%;
+        font-size: 20px;
+    }
+
+    .bt1 {
+        margin-top: 2%;
+        margin-left: 70%;
+    }
+
+    .bt2 {
+        margin-top: 2%;
+        margin-left: 75%;
+    }
+
+    .head2 hr {
+        top: 26%;
+    }
+
+    .result {
+        margin: -60px auto 20px;
+    }
+}
