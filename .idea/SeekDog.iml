@@ -7,14 +7,12 @@
         <option name="settingsModule" value="SeekDog/settings.py" />
         <option name="manageScript" value="$MODULE_DIR$/manage.py" />
         <option name="environment" value="&lt;map/&gt;" />
-        <option name="doNotUseTestRunner" value="false" />
-        <option name="trackFilePattern" value="migrations" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6.4 (D:\Anaconda\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
@@ -26,6 +24,7 @@
     </option>
   </component>
   <component name="TestRunnerService">
+    <option name="projectConfiguration" value="Unittests" />
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
 </module>
