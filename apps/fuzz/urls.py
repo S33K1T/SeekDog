@@ -12,6 +12,4 @@ urlpatterns = [
     # PayloadUpdate
     path('payloadUpdate/',views.GetPayloadUpdatePage ),
     path('payloadUpdate/Update',views.PayloadUpdate),
-
-
 ]

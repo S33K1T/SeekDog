@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
     <title>自定义模糊测试</title>
-    <link rel="stylesheet" href="../../../static/css/baseFuzzy.css">
+    <link rel="stylesheet" href="../../../static/css/userDefined.css">
     <link rel="stylesheet" href="../../../static/css/bootstrap.min.css">
-    <style type="text/css">
-        #float {
-            position: absolute;
-            z-index: 1000;
-            top: 35%;
-            left: 1%;
-            background-color: #fff;
-            border: 1px solid #3d3d3d;
-            border-radius: 10px;
-            resize: none;
-        }
-
-        #float button {
-            margin: 10px;
-        }
-    </style>
     <link rel="stylesheet" href="../../../static/css/common.css">
+    <style type="text/css">
+        #payloadList li>span{display: none;position: absolute;top: 20px;background: #ccc;}
+
+        #payloadList li:hover >span{display: block;}
+		#float {
+			position: absolute;
+			z-index: 1000;
+			top:  35%;
+			left:  1%;
+			background-color: #fff;
+			border: 1px solid #3d3d3d;
+			border-radius: 10px;
+			resize: none;
+		}
+		#float button{
+			margin: 10px;
+		}
+	</style>
+
 </head>
 <body>
 <!--导航-->
@@ -51,106 +54,124 @@
     </nav>
 </header>
 <div id="float">
-    <div id="open" style="display: block;">
-        <h4 style="text-align: center;">快速添加</h4>
-        <h6 style="text-align: center;margin-top: 0; ">
-            <button type="button" class="btn-link" onclick="Open('close','open')">【关闭】</button>
-        </h6>
-        <hr>
-        <button type="button" class="btn-info btn-lg" onclick="resent()">重发</button>
-        <button type="button" class="btn-info btn-lg" onclick="OpenUpdate('a')">追加</button>
-        <br>
-        <button type="button" class="btn-info btn-lg" onclick="OpenUpdate('w')">替换</button>
-        <button type="button" class="btn-info btn-lg" onclick="OpenTiaojian()">条件</button>
-    </div>
-    <div id="close" style="display: none">
-        <button type="button" onclick="Open('open','close')">
-            <img src="../../../static/img/Tools.png">
-        </button>
-    </div>
-    <div id="TextUpdate" style="display: none;">
-        <h4 style="text-align: center;" id="takeplace">替换</h4>
-        <h4 style="text-align: center;" id="appendTag">追加</h4>
-        <h6 style="text-align: center;margin-top: 0; ">
-            <button type="button" class="btn-link" onclick="update()">【确定】</button>
-            <button type="button" class="btn-link" onclick="Open('open','TextUpdate')">【关闭】</button>
-        </h6>
-        <hr>
-        <!-- 输入区域 -->
-        <div>
-            <label for="markText">标记文本</label>
-            <br>
-            <input type="text" name="markText" id="markText">
-            <br>
-            <label for="payloadname">payload文件</label>
-            <br>
-            <input type="text" name="payloadname" id="payloadname">
-            <br>
-            <label>循环深度</label>
-            <br>
-            <input type="text" name="loop" id="loop">
-            <input type="text" name="UpdateType" id="UpdateType" style="display: none;">
+	<div id="open" style="display: block;">
+		<h4 style="text-align: center;">快速添加</h4>
+		<h6  style="text-align: center;margin-top: 0; "><button type="button" class="btn-link" onclick="Open('close','open')">【关闭】</button></h6>
+		<hr>
+		<button type="button" class="btn-info btn-lg" onclick="resent()">重发</button>
+		<button type="button" class="btn-info btn-lg" onclick="OpenUpdate('a')">追加</button><br>
+		<button type="button" class="btn-info btn-lg" onclick="OpenUpdate('w')">替换</button>
+		<button type="button" class="btn-info btn-lg" onclick="OpenTiaojian()">条件</button><br>
+        <button type="button" class="btn-info btn-lg" onclick="OpenReplace()">获取替换文本</button>
+	</div>
+	<div id="close" style="display: none">
+		<button type="button" onclick="Open('open','close')">
+		<img src="../../../static/img/Tools.png">
+		</button>
+	</div>
+	<div id="TextUpdate" style="display: none;">
+		<h4 style="text-align: center;" id="takeplace">替换</h4>
+		<h4 style="text-align: center;" id="appendTag">追加</h4>
+		<h6  style="text-align: center;margin-top: 0; ">
+			<button type="button" class="btn-link" onclick="update()">【确定】</button>
+			<button type="button" class="btn-link" onclick="Open('open','TextUpdate')">【关闭】</button>
+		</h6>
+		<hr>
+		<!-- 输入区域 -->
+		<div >
+			<label for="markText">标记文本</label>
+			<br>
+			<input type="text" name="markText" id="markText">
+			<br>
+			<label for="payloadname">payload文件</label>
+			<br>
+			<input type="text" name="payloadname" id="payloadname">
+			<br>
+			<label>循环深度</label>
+			<br>
+			<input type="text" name="loop" id="loop">
+			<input type="text" name="UpdateType" id="UpdateType" style="display: none;">
 
-        </div>
+		</div>
+			
 
 
-    </div>
-    <div id="tiaojian" style="display: none;">
-        <h4 style="text-align: center;">条件</h4>
-        <h6 style="text-align: center;margin-top: 0; ">
-            <button type="button" class="btn-link" onclick="Open('open','tiaojian')">【确定】</button>
-            <button type="button" class="btn-link" onclick="Open('open','tiaojian')">【关闭】</button>
-        </h6>
-        <hr>
-        <!-- 输入区域 -->
-        <div>
-            <label>命中条件</label>
-            <br>
-            <input type="text" name="tiaojianText" id="tiaojianText">
-        </div>
+	</div>
+	<div id="tiaojian" style="display: none;">
+		<h4 style="text-align: center;">条件</h4>
+		<h6  style="text-align: center;margin-top: 0; ">
+			<button type="button" class="btn-link" onclick="tiaojianAdd()">【确定】</button>
+			<button type="button" class="btn-link" onclick="Open('open','tiaojian')">【关闭】</button>
+		</h6>
+		<hr>
+		<!-- 输入区域 -->
+		<div >
+			<label>命中条件</label>
+			<br>
+			<input type="text" name="tiaojianText" id="tiaojianText">
+		</div>
 
+	</div>
+    <div id="replaceText" style="display: none;">
+        <h4 style="text-align: center;">获取替换文本</h4>
+		<h6  style="text-align: center;margin-top: 0; ">
+			<button type="button" class="btn-link" onclick="GetReplaceText()">【确定】</button>
+			<button type="button" class="btn-link" onclick="Open('open','replaceText')">【关闭】</button>
+		</h6>
+		<hr>
+        <label for="replaceBody">url</label><br>
+        <input type="text" name="replaceBody" id="replaceBody"><br>
+        <label for="header">header</label><br>
+        <input type="text" name="header" id="header"><br>
+        <label for="data">data</label><br>
+        <input type="text" name="data" id="data"><br>
+        <label for="cookies">cookies</label><br>
+        <input type="text" name="cookies" id="cookies">
+        <label>method</label>
+        <select id="method">
+            <option>GET</option>
+            <option>POST</option>
+        </select>
     </div>
 </div>
 
 <!--main-->
 <div class="main row" style="width: 80%;margin: 0 auto">
-    <div class="title">
-        <div class="icon1"></div>
-        <p>自定义模糊测试</p>
-    </div>
-    <hr>
-    <div style="margin-top: 10px;width: 100%;" class="row">
-        <div class="col-lg-8" style="height: 600px">
-            <div style="width: 80%;height: 45%;">
-                <h3>替换文本</h3>
-                <div id="replaceText">
+	<div class="title">
+    <div class="icon1"></div>
+    <p>自定义模糊测试</p>
+</div>
+	<hr>
+	<div style="margin-top: 10px;width: 100%;" class="row" > 
+		<div class="col-lg-8" style="height: 600px">
+            <form method="POST" action="/fuzz/CustomFuzz/Fuzz/">
+                <div style="width: 80%;height: 45%;">
+                    <h3>替换文本</h3>
+                    <textarea id="replaceTextBody"  style="width: 100%;height: 180px;resize:none;" name="json_data">
 
+                    </textarea>
                 </div>
-            </div>
-            <div style="width: 80%;height: 45%;">
-                <h3>执行策略</h3>
-                <form method="POST" action="#">
-                    <textarea style="width: 100%;height: 180px;resize:none;" id="celue"></textarea>
-                    <button type="submit">提交</button>
-                    <button type="button" onclick="">获取替换文本</button>
-                </form>
-            </div>
-        </div>
-        <div class="col-lg-4" style="height: 400px;">
-            <h3>payload列表</h3>
-            <ul style="list-style: none;overflow-y: auto;height: 400px;" id="payloadList">
-                {% for item in list %}
-                    <li style="border: 1px solid #dedede">
-                        <span>{{ item.NAME }}</span>
-                        <br>
-                        <span>{{ item.PAYLOADTYPE }}</span>
-                        <p style="display: none;">{{ item.BODY }}</p>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+                <div style="width: 80%;height: 45%;">
+                    <h3>执行策略</h3>
 
-    </div>
+                        <textarea style="width: 100%;height: 180px;resize:none;" id="celue" name="strategy"></textarea>
+                        <button type="submit">提交</button>
+                </div>
+			</form>
+		</div>
+		<div class="col-lg-4" style="height: 400px;">
+			<h3>payload列表</h3>
+			<ul style="list-style: none;overflow-y: auto;height: 400px;" id="payloadList">
+				  {% for item in list %}
+				        <li style="border: 1px solid #dedede" >
+				            {{ item.NAME }}|{{ item.PAYLOADTYPE }}
+				            <span style="display: none;">{{ item.BODY }}</span>
+				        </li>
+				   {% endfor %}
+			</ul>
+		</div>
+
+	</div>
 </div>
 
 <!--footer-->
@@ -163,88 +184,131 @@
 <script src="../../../static/js/jquery-1.9.1.js"></script>
 <!-- 包括所有已编译的插件 -->
 <script src="../../../static/js/bootstrap.min.js"></script>
-<script src="../../../static/js/script.js"></script>
 <script type="text/javascript">
-    function Open(id1, id2) {
-        // body...
-        document.getElementById(id1).style.display = "block";
-        document.getElementById(id2).style.display = "none";
-    }
-
-    function resent() {
-        // body...
+	function Open(id1,id2) {
+	// body...
+	document.getElementById(id1).style.display="block";
+	document.getElementById(id2).style.display="none";
+	}
+	function resent() {
+		// body...
+		var a = document.getElementById('celue')
+		if (a.value!=="") {
+			a.value = a.value+"\n";
+		}
+		a.value = a.value + "resent();"
+		
+	}
+	function OpenUpdate(type) {
+		// body...
+		document.getElementById('markText').value="";
+		document.getElementById('payloadname').value="";
+		document.getElementById('loop').value="";
+		document.getElementById('UpdateType').value="";
+		Open('TextUpdate','open');
+		if (type==="a") {
+			document.getElementById("takeplace").style.display="none";
+			document.getElementById("appendTag").style.display="display";
+		}
+		else if (type==="w") {
+			document.getElementById("takeplace").style.display="block";
+			document.getElementById("appendTag").style.display="none";
+		}
+		document.getElementById("UpdateType").value=type;
+	}
+	function update() {
+		// body...
+		var markText = document.getElementById('markText').value;
+		var payloadname = document.getElementById('payloadname').value;
+		var loop = document.getElementById('loop').value;
+		var UpdateType = document.getElementById('UpdateType').value;
         var a = document.getElementById('celue')
-        if (a.value !== "") {
-            a.value = a.value + "\n";
-        }
-        a.value = a.value + "resent();"
+		if (a.value!=="") {
+			a.value = a.value+"\n";
+		}
+		a.value = a.value + "update["+markText+","+payloadname+","
+        +loop+","+UpdateType+"]";
+
+		Open('open','TextUpdate');
+	}
+	function OpenTiaojian(){
+		document.getElementById('tiaojianText').value="";
+		Open('tiaojian','open');
+	}
+	function OpenReplace(){
+	    Open('replaceText','open');
+    }
+    function GetReplaceText() {
+        /*$.ajax({
+            url:"ReplaceText/",
+            type:"POST",
+            data:{'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val(),
+                   'url':document.getElementById('replaceBody').value,
+                    'header':document.getElementById('header').value,
+                'data':document.getElementById('data').value,
+                'cookies':document.getElementById('cookies').value,
+                  'method':document.getElementById('method').options[document.getElementById('method').selectedIndex].innerHTML},
+            success:function(data){
+            	console.log(JSON.parse(data));
+                for(var i =0;i<data.length;++i){
+                     document.getElementById('replaceTextBody').append(data[i]);
+                }
+            },
+            error:function (e) {
+                alert("1")
+            }
+        })
+*/
+        $.post("ReplaceText/",{'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val(),
+                   'url':document.getElementById('replaceBody').value,
+                    'header':document.getElementById('header').value,
+                'data':document.getElementById('data').value,
+                'cookies':document.getElementById('cookies').value,
+                  'method':document.getElementById('method').options[document.getElementById('method').selectedIndex].innerHTML},
+            function(data){
+            	console.log(data,data.json_data,JSON.parse(data.json_data));
+            	document.getElementById('replaceTextBody').value=data.json_data;
+                /*for(var i =0;i<data.length;++i){
+                     document.getElementById('replaceTextBody').append(data[i]);
+                }*/
+            },"json");
 
     }
-
-    function OpenUpdate(type) {
-        // body...
-        document.getElementById('markText').value = "";
-        document.getElementById('payloadname').value = "";
-        document.getElementById('loop').value = "";
-        document.getElementById('UpdateType').value = "";
-        Open('TextUpdate', 'open');
-        if (type === "a") {
-            document.getElementById("takeplace").style.display = "none";
-            document.getElementById("appendTag").style.display = "display";
-        }
-        else if (type === "w") {
-            document.getElementById("takeplace").style.display = "block";
-            document.getElementById("appendTag").style.display = "none";
-        }
-        document.getElementById("UpdateType").value = type;
-    }
-
-    function update() {
-        // body...
-        var markText = document.getElementById('markText').value;
-        var payloadname = document.getElementById('payloadname').value;
-        var loop = document.getElementById('loop').value;
-        var UpdateType = document.getElementById('UpdateType').value;
-
-
-        Open('open', 'TextUpdate');
-    }
-
-    function OpenTiaojian() {
-        document.getElementById('tiaojianText').value = "";
-        Open('tiaojian', 'open');
-    }
-
-    function tiaojianAdd() {
-        // body...
-        document.getElementById('tiaojianText').value
-        Open('open', 'tiaojian');
-    }
+	function tiaojianAdd() {
+		// body...
+        var a = document.getElementById('celue')
+		if (a.value!=="") {
+			a.value = a.value+"\n";
+		}
+		a.value=a.value+"judge《"+document.getElementById('tiaojianText').value+"》";
+		Open('open','tiaojian');
+	}
 
 </script>
 <script type="text/javascript">
-    var div = document.getElementById("float");
-    var dragFlag = false;
-    var x, y;
+var div = document.getElementById("float");
+var dragFlag = false;
+var x,y;
 
-    div.onmousedown = function (e) {
-        e = e || window.event;
-        x = e.clientX - div.offsetLeft;
-        y = e.clientY - div.offsetTop;
-        dragFlag = true;
-    };
+div.onmousedown = function (e) {
+	e = e || window.event;
+	x = e.clientX - div.offsetLeft;
+	y = e.clientY - div.offsetTop;
+	dragFlag = true;
+};
 
-    document.onmousemove = function (e) {
-        if (dragFlag) {
-            e = e || window.event;
-            div.style.left = e.clientX - x + "px";
-            div.style.top = e.clientY - y + "px";
-        }
-    };
+document.onmousemove = function (e) {
+	if (dragFlag) {
+		e = e || window.event;
+		div.style.left = e.clientX - x + "px";
+		div.style.top  = e.clientY - y + "px";
+	}
+};
 
-    document.onmouseup = function (e) {
-        dragFlag = false;
-    };
+document.onmouseup = function (e) {
+	dragFlag = false;
+};
 </script>
+<script src="../../../static/js/script.js"></script>
 </body>
 </html>

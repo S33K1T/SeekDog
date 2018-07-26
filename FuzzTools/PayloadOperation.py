@@ -19,12 +19,16 @@ def getPayloadLists():
 def getPayload(payloadname):
     conn = getConnection()
     cursor = conn.cursor()
-    temp = cursor.execute("SELECT NAME,PAYLOADTYPE,BODY FROM PAYLOAD WHERE NAME = ?", (payloadname))
+    print(payloadname)
+    sql = "SELECT PAYLOADTYPE,BODY FROM PAYLOAD WHERE NAME = '"+payloadname+"'"
+    temp = []
+    for i in cursor.execute(sql):
+        temp.append(i)
     lists = []
     if len(temp)>0:
-        lists= temp[0][2].split('\n')
+        lists= temp[0][1].split('\n')
         conn.close()
-        return {'NAME':payloadname,'TYPE':temp[0][1],'BODY':lists}
+        return {'NAME':payloadname,'TYPE':temp[0][0],'BODY':lists}
     else:
         conn.close()
         return None

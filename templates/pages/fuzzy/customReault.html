@@ -56,13 +56,13 @@
                     </tr>
                     </thead>
                     <tbody id="resultTable">
-                    {% for item in Resultlists %}
+                    {% for item in results %}
                         <tr>
                             <td></td>
-                            <td>{{ item.url }}</td>
+                            <td>{{ item.host }}</td>
                             <td>{{ item.path }}</td>
                             <td>{{ item.statusco }}</td>
-                            <td>{{ item.status }}</td>
+                            <td>{{ item.status.result }}</td>
                         </tr>
                     {% endfor %}
                     </tbody>
@@ -78,30 +78,34 @@
                     检测结果
                 </div>
                 <div class="panel-body" style="height: 350px;">
-                    {{ conclusion }}
+                    <p>
+                        本次测试命中条件为{{ tiaojian }},测试记录数为{{ loop }},
+                        其中状态码为200的记录数量为{{ 200_ok }}，
+                        满足命中条件的记录数量为{{ hitCount }}，命中条件满足次数详情为：{{ HitMap }}
+                    </p>
                 </div>
             </div>
             <!--包数据-->
-            <div id="dataBox" class="col-sm-7">
-                <ul id="myTab" class="nav nav-tabs">
-                    <li class="active">
-                        <a href="#data1" data-toggle="tab">请求包数据</a>
-                    </li>
-                    <li><a href="#data2" data-toggle="tab">响应包数据</a></li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade in active" id="data1">
-                        {% for item in  Resultlists %}
-                            <p class="{{ item.id }}" style="display: none;">{{ item.request }}</p>
-                        {% endfor %}
-                    </div>
-                    <div class="tab-pane fade" id="data2">
-                        {% for item in  Resultlists %}
-                            <p class="{{ item.id }}" style="display: none;">{{ item.response }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
+{#            <div id="dataBox" class="col-sm-7">#}
+{#                <ul id="myTab" class="nav nav-tabs">#}
+{#                    <li class="active">#}
+{#                        <a href="#data1" data-toggle="tab">请求包数据</a>#}
+{#                    </li>#}
+{#                    <li><a href="#data2" data-toggle="tab">响应包数据</a></li>#}
+{#                </ul>#}
+{#                <div id="myTabContent" class="tab-content">#}
+{#                    <div class="tab-pane fade in active" id="data1">#}
+{#                        {% for item in  Resultlists %}#}
+{#                            <p class="{{ item.id }}" style="display: none;">{{ item.request }}</p>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                    <div class="tab-pane fade" id="data2">#}
+{#                        {% for item in  Resultlists %}#}
+{#                            <p class="{{ item.id }}" style="display: none;">{{ item.response }}</p>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
         </div>
     </div>
 </div>
@@ -157,13 +161,14 @@
                 radius: '55%',
                 center: ['50%', '60%'],
                 data: [
-                    {value: 1, name: '命中'},
-                    {value: 9, name: '未命中'}
+                    {value: {{ hitCount }}, name: '命中'},
+                    {value: {{ loop }}-{{ hitCount }}, name: '未命中'}
                 ]
             }
         ]
     };
     myChart.setOption(option);
+    
     /*标签栏*/
     $(function () {
         $('#myTab li:eq(1) a').tab('show');
